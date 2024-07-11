@@ -6,7 +6,7 @@ const ProjectSchema = new mongoose.Schema({
   projectAim: { type: String, required: true },
   departments: [{ type: String, required: true }],
   projectAbstract: { type: String, required: true },
-  technologies: [{ type: String, required: true }],
+  technologies: [{ type: String}],
   pdf: { type: String },
   githubLink: { type: String },
   videoLink: { type: String },
