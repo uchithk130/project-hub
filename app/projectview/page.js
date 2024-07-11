@@ -7,7 +7,7 @@ import { useUser } from '@clerk/nextjs';
 import axios from 'axios'; // Import axios for HTTP requests
 import { SignInButton } from '@clerk/nextjs';
 import { useSearchParams } from 'next/navigation';
-import SkeletonView from '../_components/Skeletonview';
+import SkeletonView from '../_components/SkeletonView';
 const ProjectDetails = () => {
   const { isSignedIn } = useUser();
   const [project, setProject] = useState(null); // Initialize project state
