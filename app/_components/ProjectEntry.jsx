@@ -185,7 +185,6 @@ const ProjectEntry = ({ isOpen, onClose }) => {
                     checked={formData.departments.includes(dept)}
                     onChange={handleChange}
                     className="mr-2 cursor-pointer"
-                    required
                   />
                   {dept}
                 </label>
