@@ -77,7 +77,7 @@ const ProjectDetails = () => {
       </div>
 
       {/* Main content */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-justify">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
         {/* Right Column: Project Details */}
         <div className="bg-white p-4 rounded shadow md:col-span-2 order-1">
           <h2 className="text-3xl font-serif font-bold mb-4 text-green-400">{project.projectName}</h2>
