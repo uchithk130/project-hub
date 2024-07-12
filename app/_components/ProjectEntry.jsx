@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { Button } from '../../components/ui/button';
 import { useUser } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 const departments = ['CSE', 'EEE', 'ECE', 'MEC', 'CIV', 'Data-Science', 'AI', 'ML','Automobile' ,'Other'];
 const technologies = [
@@ -31,7 +32,7 @@ const ProjectEntry = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [isLoading, setIsLoading] = useState(false);
   const { user } = useUser();
-
+  const router = useRouter();
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
     if (type === 'checkbox') {
@@ -83,7 +84,7 @@ const ProjectEntry = ({ isOpen, onClose }) => {
     const imageUrls = await Promise.all(images.map(file => uploadFile(file, 'image')));
     return imageUrls;
   };
-
+  const email = user?.emailAddresses?.[0]?.emailAddress || '';
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -121,6 +122,7 @@ const ProjectEntry = ({ isOpen, onClose }) => {
         toast.success('Project successfully submitted!');
         setFormData(initialFormData);
         onClose();
+        router.push(`/my-projects?email=${email}`);
       } else {
         const errorData = await response.json();
         toast.error(`Submission failed: ${errorData.message}`);
