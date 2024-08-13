@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
           <link rel="icon" href="app\favicon.ico" sizes="any" />
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7055031129192732"
      crossorigin="anonymous"></script>
+       <meta name="google-adsense-account" content="ca-pub-7055031129192732">
           </Head>
         <body className={inter.className}>
           <Provider>{children}</Provider>
