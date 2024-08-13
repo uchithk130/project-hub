@@ -23,6 +23,8 @@ export default function RootLayout({ children }) {
         <Head>
           <title>{metadata.title}</title>
           <link rel="icon" href="app\favicon.ico" sizes="any" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7055031129192732"
+     crossorigin="anonymous"></script>
           </Head>
         <body className={inter.className}>
           <Provider>{children}</Provider>
